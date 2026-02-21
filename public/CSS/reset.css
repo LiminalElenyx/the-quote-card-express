@@ -1,4 +1,5 @@
 /* Basic Reset to remove default margins, paddings, and other inconsistencies */
+
 *,
 *::before,
 *::after {
