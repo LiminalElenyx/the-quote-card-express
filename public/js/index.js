@@ -1,3 +1,20 @@
+
+async function getRandomImage() {
+    const client_id = ""
+    const endpoint = `https://api.unsplash.com/photos/random/?client_id=${client_id}`;
+    try {
+        const response = await fetch(endpoint);
+        const returnedData = await response.json()
+        const receivedPhotoURL = returnedData.urls.regular;
+
+        const imgDiv = document.querySelector(".background-img");
+        imgDiv.style.backgroundImage = `url("${receivedPhotoURL}")`;
+    } catch (error) {
+        console.error(error)
+    }
+    }
+getRandomImage();
+
 "use strict"
 
 const elements = {
@@ -5,7 +22,7 @@ const elements = {
     author: document.getElementById("author"),
 };
 
-const quotes = [
+/*const quotes = [
     {
         quote: "All hands! Abandon ship!",
         author: "Captain Picard",
@@ -40,4 +57,5 @@ function loopThroughQuotes() {
     }, 3000);
 }
 
-setTimeout(loopThroughQuotes, 3000);
+setTimeout(loopThroughQuotes, 3000); */
+
